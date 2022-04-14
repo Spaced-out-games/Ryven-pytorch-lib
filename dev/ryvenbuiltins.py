@@ -67,9 +67,28 @@ class NodeBase(Node):
 
     def apply_op(self, elements: list):
         return None
-class NumpyNodeBase(NodeBase):
-    color = "#3693c9"
+class StringNodeBase(NodeBase):
+    color = "#a98a16"
+class TypeNodeBase(NodeBase):
+    color = "#0816f7"
 
-class NumpyArray(NumpyNodeBase):
-    np.array()
-    title = 'object --> Numpy.ndarray'
+class TypeNode(TypeNodeBase):
+    title = 'type'
+    def apply_op(self,elements: list)->str:
+        return all([type(elements[e]) for e in elements])
+type_nodes = [TypeNode]
+
+
+
+
+
+
+
+
+
+
+
+
+nodes = [
+    *type_nodes
+]
