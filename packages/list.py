@@ -26,7 +26,8 @@ class ListCountNode(Node):
     init_outputs = [NodeOutputBP()]
     color = pallete['list']
     def update_event(self, inp=-1):
-        return self.input(0).count(self.input(1))
+        result =  self.input(0).count(self.input(1))
+        self.set_output_val(0,result)
 class ListAppendNode(Node):
     '''Append element to the end of list'''
     title = 'append'
@@ -44,11 +45,12 @@ class ListPopNode(Node):
     '''Pop the last element of a list'''
     title = 'pop'
     tags = ['list']
-    init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1))]
+    init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1), label = 'list')]
     init_outputs = [NodeOutputBP()]
     color ='#HEXCOL'
     def update_event(self, inp=-1):
-        return self.input(0).pop()
+        result = self.input(0).pop()
+        self.set_output_val(0,result)
 class ListClearNode(Node):
     '''Clears list'''
     title = 'clear'
@@ -69,7 +71,8 @@ class ListGetNode(Node):
     init_outputs = [NodeOutputBP()]
     color = pallete['list']
     def update_event(self, inp=-1):
-        return self.input(0)[self.input(1)]
+        result = self.input(0)[self.input(1)]
+        self.set_output_val(0,result)
 class ListSetNode(Node):
     '''Sets nth element of list to X'''
     title = 'set'
@@ -83,6 +86,15 @@ class ListSetNode(Node):
     color = pallete['list']
     def update_event(self, inp=-1):
         self.input(0)[self.input(1)] = self.input(2)
+class ListNode(Node):
+    '''Converts Wildcard into a list'''
+    title = 'list of'
+    tags = ['list']
+    init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1), label = "Wildcard")]
+    init_outputs = [NodeOutputBP()]
+    color =pallete['list']
+    def update_event(self, inp=-1):
+        self.set_output_val(index,list(self.input(0)))
 list_nodes = [
     ListCountNode,
     ListAppendNode,
