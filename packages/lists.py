@@ -56,7 +56,5 @@ list_nodes = [
     ListCountNode,
     ListAppendNode,
     ListClearNode,
-    ListGetNode,
-    ListSetNode,
     ListNode
 ]

@@ -7,8 +7,10 @@ sys.path.append(os.path.dirname(__file__))
 
 from lists import list_nodes
 from strings import str_nodes
+from wildcard import wildcard_nodes
 export_nodes(
     *list_nodes,
-    *str_nodes
+    *str_nodes,
+    *wildcard_nodes
 )
 
