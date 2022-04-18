@@ -8,7 +8,7 @@ np.ndarray(shape, dtype, buffer, offset, strides, order)
 class Make_ndarrayNode(Node):
 	'''Create a numpy ndarray from an array-like'''
 	title = 'list -> NumPy ndarray'
-	tags = ['numpy', 'ndarrat']
+	tags = ['numpy', 'ndarray']
 	init_inputs = [
 		NodeInputBP(dtype=dtypes.Data(default=1),label = 'object'),
 		NodeInputBP(dtype=dtypes.Data(default=1),label = 'dtype'),
@@ -38,3 +38,17 @@ class np_ndarray_Node(Node):
 	def update_event(self, inp=-1):
 		nd_array = np.ndarray(shape = self.inputs(0), dtype = self.inputs(1))
 		self.set_output_val(0,result)
+
+
+		
+class SimpleNode(Node):
+	'''docstring'''
+	title = 'title'
+	tags = ['str']
+	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1))]
+	init_outputs = [NodeOutputBP()]
+	color ='#HEXCOL'
+	def update_event(self, inp=-1):
+		input = self.input
+		result = input
+		self.set_output_val(index,result)
