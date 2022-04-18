@@ -14,14 +14,13 @@ class PopNode(Node):
 		self.set_output_val(0,result)
 class ElemGetNode(Node):
 	'''
-	Gets the nth element of a list, str, or dict
-	X needs to be a str if input is dict
+	Gets input at index/key to X
 	'''
 	title = 'get'
 	tags = ['list']
 	init_inputs = [
-		NodeInputBP(dtype=dtypes.Data(default=1), label = 'input'),
-		NodeInputBP(dtype=dtypes.Data(default=1), label = 'X')
+		NodeInputBP(dtype=dtypes.Data(default=1), label = 'X'),
+		NodeInputBP(dtype=dtypes.Data(default=1), label = 'Y')
 		]
 	init_outputs = [NodeOutputBP()]
 	color ='#aaaaaa'
@@ -29,17 +28,16 @@ class ElemGetNode(Node):
 	def update_event(self, inp=-1):
 		result = self.input(0)[self.input(1)]
 		self.set_output_val(0,result)
-class ElemSetNode(Node):
+class ElemSetNode(Node): 
 	'''
-	Sets element n of list, str, or dict to X
-	X needs to be a str if input is dict
+	Sets X at index/key to Y
 	'''
 	title = 'set'
 	tags = ['list', 'str','wildcard','dict']
 	init_inputs = [
-		NodeInputBP(dtype=dtypes.Data(default=1), label = 'input'),
-		NodeInputBP(dtype=dtypes.Data(default=1), label = 'n'),
 		NodeInputBP(dtype=dtypes.Data(default=1), label = 'X'),
+		NodeInputBP(dtype=dtypes.Data(default=1), label = 'index / key'),
+		NodeInputBP(dtype=dtypes.Data(default=1), label = 'Y'),
 		]
 	init_outputs = [NodeOutputBP()]
 	color = "#aaaaaa"
@@ -50,7 +48,7 @@ class RangeGetNode(Node):
 	Gets elements A thru B of X
 	Use -1 for shorthand of last element
 	'''
-	title = 'Get (in range)'
+	title = 'Get [A - B]'
 	tags = ['str','wildcard','list']
 	init_inputs = [
 		NodeInputBP(dtype=dtypes.Data(default=1), label = "X"),
@@ -67,7 +65,7 @@ class RangeGetNode(Node):
 		self.set_output_val(0,result)
 class RangeSetNode(Node):
 	'''Sets elements A thru B of X to Y'''
-	title = 'title'
+	title = "get[A - B]"
 	tags = ['str']
 	init_inputs = [
 		NodeInputBP(dtype=dtypes.Data(default=1), label = "X"),
@@ -85,7 +83,7 @@ class LiteralNode(Node):
 	Takes the literal contents of a string and evaluates it
 	Can be used to define dictionarries and arrays in a sensible manner
 	'''
-	title = 'title'
+	title = 'Literal'
 	tags = ['str']
 	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1))]
 	init_outputs = [NodeOutputBP()]
