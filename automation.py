@@ -1,4 +1,4 @@
-from imp import is_builtin
+from ast import arg
 from string import ascii_uppercase
 import sys
 from inspect import isfunction, getargspec,getfullargspec
@@ -6,9 +6,12 @@ def num_args(f):
   if isfunction(f):
     return len(getargspec(f).args)
   else:
-    spec = f.__doc__.split('\n')[0]
-    args = spec[spec.find('(')+1:spec.find(')')]
-    return args.count(',')+1 if args else 0
+    try:
+        spec = f.__doc__.split('\n')[0]
+        args = spec[spec.find('(')+1:spec.find(')')]
+        return args.count(',')+1 if args else 0
+    except AttributeError as A:
+        return None
 def node_from_function(name: str, call: str, obj: object, color: str):
     """Create a node class definition from a given function.
 
@@ -47,8 +50,11 @@ WARNING: Module {name} was generated using fallback option. May contain bugs
         #"""
         argcnt = num_args(obj)
         args = []
+        if argcnt == None:#placeholder
+            argcnt = 0
         for i in range(argcnt):
             args.append(chr(i + 97))
+
     
     inputs = '\n'.join([f"NodeInputBP('{param_name}')," for param_name in args])
     node_name = f'{name}_Node'
@@ -92,15 +98,19 @@ def attributes_without_builtins(o):
     while d.count("") > 0:
         d.pop(d.index(""))
     return d
-import math
+import torch
 
-module = math
+module = torch
+code = ""
+attrs = []
+color = "#aaaaaa"
 d = attributes_without_builtins(module)
 for i in d:
     f = getattr(module,i)
-    name = module.__name__.capitalize() + i.capitalize() + "Node"
-    code = node_from_function(name,i,f,"#aaaaaa")
-    if isinstance(code, str):
-        print(code)
+    name = i.capitalize() + "Node"
+    func= node_from_function(name,i,f,color)
+    if isinstance(func, str):
+        print(func)
+    
         
 
