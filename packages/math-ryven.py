@@ -814,3 +814,6 @@ math_nodes = [
     MathPiNode_Node,MathPowNode_Node,MathRadiansNode_Node,MathRemainderNode_Node,MathSinNode_Node,MathSinhNode_Node,MathSqrtNode_Node,MathTanNode_Node,MathTanhNode_Node,
     MathTauNode_Node,MathTruncNode_Node
 ]
+export_nodes(
+    *math_nodes
+)
