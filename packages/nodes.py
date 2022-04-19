@@ -6,6 +6,6 @@ import sys
 import os
 sys.path.append(os.path.dirname(__file__))
 
-package_names = [name for name in os.listdir("./packages") if name.find(".") == -1]
+package_names = [name for name in os.listdir("./packages") if name.find(".") == -1]#sorts through packages and finds folders. May break if file name does not contain an extension
 print(package_names)
 
