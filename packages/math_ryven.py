@@ -1,5 +1,4 @@
-from ryven import *
-
+from ryven.NENV import *
 from math import *
 
 class MathAcosNode_Node(Node):
@@ -168,7 +167,6 @@ class MathCoshNode_Node(Node):
         self.set_output_val(0, cosh(self.input(0)))
 class MathDegreesNode_Node(Node):
     """Convert angle x from radians to degrees."""
-
     title = 'MathDegreesNode'
     init_inputs = [
         NodeInputBP(dtype=dtypes.Data(default=1), label = 'x'),
@@ -176,6 +174,7 @@ class MathDegreesNode_Node(Node):
     init_outputs = [
         NodeOutputBP(),
     ]
+    tags = ["deg"]
     color = '#aaaaaa'
 
     def update_event(self, inp=-1):
@@ -190,8 +189,6 @@ class MathENode_Node(Node):
 
     title = 'MathENode'
     init_inputs = [
-        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
-NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -199,7 +196,7 @@ NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     color = '#aaaaaa'
 
     def update_event(self, inp=-1):
-        self.set_output_val(0, e(self.input(0), self.input(1)))
+        self.set_output_val(0, e)
 class MathErfNode_Node(Node):
     """Error function at x."""
 
@@ -634,16 +631,13 @@ class MathPiNode_Node(Node):
 
     title = 'MathPiNode'
     init_inputs = [
-        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
-NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     ]
     init_outputs = [
         NodeOutputBP(),
     ]
     color = '#aaaaaa'
-
     def update_event(self, inp=-1):
-        self.set_output_val(0, pi(self.input(0), self.input(1)))
+        self.set_output_val(0, pi)
 class MathPowNode_Node(Node):
     """Return x**y (x to the power of y)."""
 

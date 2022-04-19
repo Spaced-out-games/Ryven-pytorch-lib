@@ -1,0 +1,155 @@
+{
+    "general info": {
+        "type": "Ryven project file",
+        "ryven version": "v3.1"
+    },
+    "required packages": [
+        {
+            "name": "std",
+            "dir": "/Users/dfrost/Library/Python/3.9/lib/python/site-packages/ryven/example_nodes/std"
+        }
+    ],
+    "scripts": [
+        {
+            "title": "hello world",
+            "variables": {},
+            "flow": {
+                "algorithm mode": "data",
+                "nodes": [
+                    {
+                        "identifier": "std.Button_Node",
+                        "version": "v0.1",
+                        "state data": "gAR9lC4=",
+                        "additional data": {
+                            "special actions": {},
+                            "display title": "Button"
+                        },
+                        "inputs": [],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "GID": 8
+                            }
+                        ],
+                        "GID": 7,
+                        "pos x": 182.0,
+                        "pos y": 202.0,
+                        "main widget data": "gAR9lC4=",
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Print_Node",
+                        "version": "v0.1",
+                        "state data": "gASVDgAAAAAAAAB9lIwGYWN0aXZllIhzLg==",
+                        "additional data": {
+                            "special actions": {
+                                "make passive": {
+                                    "method": "make_passive"
+                                }
+                            },
+                            "display title": "Print"
+                        },
+                        "inputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "GID": 10
+                            },
+                            {
+                                "type": "data",
+                                "label": "",
+                                "GID": 11,
+                                "dtype": "DType.Data",
+                                "dtype state": "gASVNQAAAAAAAAB9lCiMB2RlZmF1bHSUTowDdmFslE6MA2RvY5SMAJSMBmJvdW5kc5ROjARzaXpllIwBbZR1Lg==",
+                                "has widget": true,
+                                "widget data": "gASVEgAAAAAAAAB9lIwEdGV4dJSMBE5vbmWUcy4="
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "exec",
+                                "label": "",
+                                "GID": 12
+                            }
+                        ],
+                        "GID": 9,
+                        "pos x": 563.0,
+                        "pos y": 209.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    },
+                    {
+                        "identifier": "std.Checkpoint_Node",
+                        "version": "v0.1",
+                        "state data": "gASVHwAAAAAAAAB9lCiMBmFjdGl2ZZSJjAtudW0gb3V0cHV0c5RLAXUu",
+                        "additional data": {
+                            "special actions": {
+                                "add output": {
+                                    "method": "add_output"
+                                },
+                                "remove output": {
+                                    "0": {
+                                        "method": "remove_output",
+                                        "data": 0
+                                    }
+                                },
+                                "make active": {
+                                    "method": "make_active"
+                                }
+                            },
+                            "display title": ""
+                        },
+                        "inputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "GID": 15,
+                                "val": "gAROLg==",
+                                "has widget": false
+                            }
+                        ],
+                        "outputs": [
+                            {
+                                "type": "data",
+                                "label": "",
+                                "GID": 16
+                            }
+                        ],
+                        "GID": 14,
+                        "pos x": 325.0,
+                        "pos y": 326.0,
+                        "unconnected ports hidden": false,
+                        "collapsed": false
+                    }
+                ],
+                "connections": [
+                    {
+                        "GID": 13,
+                        "parent node index": 0,
+                        "output port index": 0,
+                        "connected node": 1,
+                        "connected input port index": 0
+                    },
+                    {
+                        "GID": 17,
+                        "parent node index": 2,
+                        "output port index": 0,
+                        "connected node": 1,
+                        "connected input port index": 1
+                    }
+                ],
+                "GID": 6,
+                "flow view": {
+                    "drawings": [],
+                    "view size": [
+                        6400.0,
+                        4800.0
+                    ]
+                }
+            },
+            "GID": 1
+        }
+    ]
+}
