@@ -12,7 +12,7 @@ def num_args(f):
         return args.count(',')+1 if args else 0
     except AttributeError as A:
         return None
-def node_from_function(name: str, call: str, obj: object, color: str):
+def node_from_function(name: str, call: str, obj: object, color: str,m_name = ""):
     """Create a node class definition from a given function.
 
     Parameters
@@ -74,7 +74,7 @@ class {node_name}(Node):
     color = '{color}'
 
     def update_event(self, inp=-1):
-        self.set_output_val(0, {call}({
+        self.set_output_val(0, {m_name}.{call}({
             ', '.join([f'self.input({i})' for i in range(len(args))]) 
                                         }))
 """
@@ -98,19 +98,34 @@ def attributes_without_builtins(o):
     while d.count("") > 0:
         d.pop(d.index(""))
     return d
+def nodify_module(module, color):
+    code = ""
+    m_name = module.__package__
+    attrs = []
+    d = attributes_without_builtins(module)
+    for i in d:
+        f = getattr(module,i)
+        name = i.capitalize() + "Node"
+        func= node_from_function(name,i,f,color,m_name)
+        if isinstance(func, str):
+            code += func
+            attrs.append(name)
+    s_attr = ""
+    for i in range(len(attrs)):
+        s_attr+= (attrs[i] + "\t\n") if i==0 else (", " + attrs[i] + "\t\n")
+    return f'''
+from ryven.NENV import *
+import {m_name}
+{code}
+{m_name}_nodes = [{s_attr}]
+export_nodes(*{m_name}_nodes)
+    '''
+
 import torch
 
-module = torch
-code = ""
-attrs = []
-color = "#aaaaaa"
-d = attributes_without_builtins(module)
-for i in d:
-    f = getattr(module,i)
-    name = i.capitalize() + "Node"
-    func= node_from_function(name,i,f,color)
-    if isinstance(func, str):
-        print(func)
+code = nodify_module(torch, "#001199")
+f = open("torch_ryven.py","w").write(code)
+
     
         
 
