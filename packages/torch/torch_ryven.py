@@ -1,9 +1,8 @@
-
+#regex: args:\n+    [^)]*\): ([a-zA-Z]+( [a-zA-Z]+)+).\n+    [^)]*\)
 from ryven.NENV import *
 import torch
 
-
-
+'''
 """
 WARNING: Module AvgNode was generated using fallback option. May contain bugs
 """
@@ -17,7 +16,7 @@ class AvgNode(Node):
 
     title = 'AvgNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -42,7 +41,7 @@ class AggregationtypeNode(Node):
 
     title = 'AggregationtypeNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -142,7 +141,7 @@ class Bfloat16storageNode(Node):
 
     title = 'Bfloat16storageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -242,7 +241,7 @@ class BoolstorageNode(Node):
 
     title = 'BoolstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -321,7 +320,7 @@ class BytestorageNode(Node):
 
     title = 'BytestorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -373,7 +372,7 @@ class Conv_bn_fusionNode(Node):
 
     title = 'Conv_bn_fusionNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -431,7 +430,7 @@ class CharstorageNode(Node):
 
     title = 'CharstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -552,7 +551,7 @@ class ComplexdoublestorageNode(Node):
 
     title = 'ComplexdoublestorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -568,7 +567,7 @@ class ComplexfloatstorageNode(Node):
 
     title = 'ComplexfloatstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -731,7 +730,7 @@ class DoublestorageNode(Node):
 
     title = 'DoublestorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -846,7 +845,7 @@ class Fuse_add_reluNode(Node):
 
     title = 'Fuse_add_reluNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -904,7 +903,7 @@ class FloatstorageNode(Node):
 
     title = 'FloatstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1141,7 +1140,7 @@ class Hoist_conv_packed_paramsNode(Node):
 
     title = 'Hoist_conv_packed_paramsNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1157,7 +1156,7 @@ class HalfstorageNode(Node):
 
     title = 'HalfstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1230,7 +1229,7 @@ class Insert_fold_prepack_opsNode(Node):
 
     title = 'Insert_fold_prepack_opsNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1288,7 +1287,7 @@ class IntstorageNode(Node):
 
     title = 'IntstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1472,7 +1471,7 @@ class LongstorageNode(Node):
 
     title = 'LongstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1524,7 +1523,7 @@ class MobileoptimizertypeNode(Node):
 
     title = 'MobileoptimizertypeNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1750,7 +1749,7 @@ class Qint32storageNode(Node):
 
     title = 'Qint32storageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1787,7 +1786,7 @@ class Qint8storageNode(Node):
 
     title = 'Qint8storageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1824,7 +1823,7 @@ class Quint4x2storageNode(Node):
 
     title = 'Quint4x2storageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1840,7 +1839,7 @@ class Quint8storageNode(Node):
 
     title = 'Quint8storageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1871,7 +1870,7 @@ class Remove_dropoutNode(Node):
 
     title = 'Remove_dropoutNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -1917,7 +1916,7 @@ class SumNode(Node):
 
     title = 'SumNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2083,7 +2082,7 @@ class SetNode(Node):
 
     title = 'SetNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2099,7 +2098,7 @@ class ShortstorageNode(Node):
 
     title = 'ShortstorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2136,7 +2135,7 @@ class SizeNode(Node):
 
     title = 'SizeNode'
     init_inputs = [
-        NodeInputBP('iterable'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'iterable'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2173,7 +2172,7 @@ class StorageNode(Node):
 
     title = 'StorageNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2282,7 +2281,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Type_checkingNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2297,28 +2296,31 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 """
 WARNING: Module TensorNode was generated using fallback option. May contain bugs
 """
-
+'''
+#KEEP
 class TensorNode(Node):
     """None"""
 
-    title = 'TensorNode'
+    title = 'Tensor'
     init_inputs = [
-        
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'args'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'device'),
     ]
+    torch.Tensor()
     init_outputs = [
         NodeOutputBP(),
     ]
     color = '#001199'
 
     def update_event(self, inp=-1):
-        self.set_output_val(0, torch.Tensor())
+        self.set_output_val(0, torch.Tensor(*self.input))
 
 
 
 """
 WARNING: Module TensortypeNode was generated using fallback option. May contain bugs
 """
-
+'''
 class TensortypeNode(Node):
     """None"""
 
@@ -2433,7 +2435,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Use_global_depsNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2458,7 +2460,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Use_rtld_global_with_libtorchNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2537,7 +2539,7 @@ class _storagebaseNode(Node):
 
     title = '_storagebaseNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2743,8 +2745,8 @@ class _assertNode(Node):
 
     title = '_assertNode'
     init_inputs = [
-        NodeInputBP('condition'),
-NodeInputBP('message'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'condition'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'message'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -2780,7 +2782,7 @@ Args:
 
     title = '_assert_asyncNode'
     init_inputs = [
-        
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'tensor')
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -5316,7 +5318,7 @@ class _import_dotted_nameNode(Node):
 
     title = '_import_dotted_nameNode'
     init_inputs = [
-        NodeInputBP('name'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'name'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -5490,7 +5492,7 @@ class _linalg_utilsNode(Node):
 
     title = '_linalg_utilsNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -5528,7 +5530,7 @@ class _lobpcgNode(Node):
 
     title = '_lobpcgNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -5613,7 +5615,7 @@ class _lowrankNode(Node):
 
     title = '_lowrankNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -6607,7 +6609,7 @@ If the argument is a tuple, the return value is the same object."""
 
     title = '_string_classesNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -8757,7 +8759,8 @@ class As_strided_Node(Node):
 """
 WARNING: Module As_tensorNode was generated using fallback option. May contain bugs
 """
-
+'''
+#KEEP
 class As_tensorNode(Node):
     """
 as_tensor(data, dtype=None, device=None) -> Tensor
@@ -8796,9 +8799,11 @@ Example::
     array([1,  2,  3])
 """
 
-    title = 'As_tensorNode'
+    title = 'Any -> Tensor'
     init_inputs = [
-        
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'data'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'dtype'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'device')
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -8806,14 +8811,14 @@ Example::
     color = '#001199'
 
     def update_event(self, inp=-1):
-        self.set_output_val(0, torch.as_tensor())
+        self.set_output_val(0, torch.as_tensor(*self.input))
 
 
 
 """
 WARNING: Module AsinNode was generated using fallback option. May contain bugs
 """
-
+'''
 class AsinNode(Node):
     """
 asin(input, *, out=None) -> Tensor
@@ -9271,7 +9276,7 @@ errors defaults to 'strict'."""
 
     title = 'AttrNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -10520,7 +10525,7 @@ class CandidateNode(Node):
 
     title = 'CandidateNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -10677,10 +10682,10 @@ class CdistNode(Node):
 
     title = 'CdistNode'
     init_inputs = [
-        NodeInputBP('x1'),
-NodeInputBP('x2'),
-NodeInputBP('p'),
-NodeInputBP('compute_mode'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'x1'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'x2'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'p'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'compute_mode'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -12734,7 +12739,7 @@ class CtypesNode(Node):
 
     title = 'CtypesNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -14489,7 +14494,7 @@ class EinsumNode(Node):
 
     title = 'EinsumNode'
     init_inputs = [
-        NodeInputBP('equation'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'equation'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -16277,8 +16282,8 @@ class ForkNode(Node):
 
     title = 'ForkNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -16437,7 +16442,8 @@ class From_fileNode(Node):
 """
 WARNING: Module From_numpyNode was generated using fallback option. May contain bugs
 """
-
+'''
+#KEEP
 class From_numpyNode(Node):
     """
 from_numpy(ndarray) -> Tensor
@@ -16464,7 +16470,7 @@ Example::
     array([-1,  2,  3])
 """
 
-    title = 'From_numpyNode'
+    title = 'ndarray -> Tensor'
     init_inputs = [
         
     ]
@@ -16475,7 +16481,7 @@ Example::
 
     def update_event(self, inp=-1):
         self.set_output_val(0, torch.from_numpy())
-
+'''
 
 
 """
@@ -17450,7 +17456,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_cudaNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -17475,7 +17481,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_cudnnNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -17500,7 +17506,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_lapackNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -17525,7 +17531,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_mklNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -17550,7 +17556,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_mkldnnNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -17575,7 +17581,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_mlcNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -17600,7 +17606,7 @@ The class bool is a subclass of the class int, and cannot be subclassed."""
 
     title = 'Has_openmpNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -18230,10 +18236,10 @@ class Import_ir_moduleNode(Node):
 
     title = 'Import_ir_moduleNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
-NodeInputBP('c'),
-NodeInputBP('d'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'c'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'd'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -18255,10 +18261,10 @@ class Import_ir_module_from_bufferNode(Node):
 
     title = 'Import_ir_module_from_bufferNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
-NodeInputBP('c'),
-NodeInputBP('d'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'c'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'd'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -18476,8 +18482,8 @@ class Inference_modeNode(Node):
 
     title = 'Inference_modeNode'
     init_inputs = [
-        NodeInputBP('self'),
-NodeInputBP('mode'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'mode'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -19078,7 +19084,7 @@ class Is_storageNode(Node):
 
     title = 'Is_storageNode'
     init_inputs = [
-        NodeInputBP('obj'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'obj'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -19109,7 +19115,7 @@ class Is_tensorNode(Node):
 
     title = 'Is_tensorNode'
     init_inputs = [
-        NodeInputBP('obj'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'obj'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -19500,16 +19506,16 @@ class IstftNode(Node):
 
     title = 'IstftNode'
     init_inputs = [
-        NodeInputBP('input'),
-NodeInputBP('n_fft'),
-NodeInputBP('hop_length'),
-NodeInputBP('win_length'),
-NodeInputBP('window'),
-NodeInputBP('center'),
-NodeInputBP('normalized'),
-NodeInputBP('onesided'),
-NodeInputBP('length'),
-NodeInputBP('return_complex'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'input'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'n_fft'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'hop_length'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'win_length'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'window'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'center'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'normalized'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'onesided'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'length'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'return_complex'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -20328,9 +20334,9 @@ class LoadNode(Node):
 
     title = 'LoadNode'
     init_inputs = [
-        NodeInputBP('f'),
-NodeInputBP('map_location'),
-NodeInputBP('pickle_module'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'f'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'map_location'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'pickle_module'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -20488,20 +20494,20 @@ class LobpcgNode(Node):
 
     title = 'LobpcgNode'
     init_inputs = [
-        NodeInputBP('A'),
-NodeInputBP('k'),
-NodeInputBP('B'),
-NodeInputBP('X'),
-NodeInputBP('n'),
-NodeInputBP('iK'),
-NodeInputBP('niter'),
-NodeInputBP('tol'),
-NodeInputBP('largest'),
-NodeInputBP('method'),
-NodeInputBP('tracker'),
-NodeInputBP('ortho_iparams'),
-NodeInputBP('ortho_fparams'),
-NodeInputBP('ortho_bparams'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'A'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'k'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'B'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'X'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'n'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'iK'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'niter'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'tol'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'largest'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'method'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'tracker'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'ortho_iparams'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'ortho_fparams'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'ortho_bparams'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -21804,7 +21810,7 @@ class Manual_seedNode(Node):
 
     title = 'Manual_seedNode'
     init_inputs = [
-        NodeInputBP('seed'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'seed'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -22566,9 +22572,9 @@ class Merge_type_from_type_commentNode(Node):
 
     title = 'Merge_type_from_type_commentNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
-NodeInputBP('c'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'c'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -23568,7 +23574,7 @@ errors defaults to 'strict'."""
 
     title = 'NameNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -24254,7 +24260,7 @@ class No_gradNode(Node):
 
     title = 'No_gradNode'
     init_inputs = [
-        NodeInputBP('self'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -24456,12 +24462,12 @@ class NormNode(Node):
 
     title = 'NormNode'
     init_inputs = [
-        NodeInputBP('input'),
-NodeInputBP('p'),
-NodeInputBP('dim'),
-NodeInputBP('keepdim'),
-NodeInputBP('out'),
-NodeInputBP('dtype'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'input'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'p'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'dim'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'keepdim'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'out'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'dtype'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -24688,7 +24694,8 @@ Example::
 """
 WARNING: Module OnesNode was generated using fallback option. May contain bugs
 """
-
+'''
+#KEEP
 class OnesNode(Node):
     """
 ones(*size, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False) -> Tensor
@@ -24724,9 +24731,9 @@ Example::
 
 """
 
-    title = 'OnesNode'
+    title = 'Ones'
     init_inputs = [
-        
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a')
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -24736,7 +24743,7 @@ Example::
     def update_event(self, inp=-1):
         self.set_output_val(0, torch.ones())
 
-
+'''
 
 """
 WARNING: Module Ones_likeNode was generated using fallback option. May contain bugs
@@ -24971,7 +24978,7 @@ and opendir), and leave all pathname manipulation to os.path
 
     title = 'OsNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -25122,7 +25129,7 @@ class Parse_irNode(Node):
 
     title = 'Parse_irNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -25144,7 +25151,7 @@ class Parse_schemaNode(Node):
 
     title = 'Parse_schemaNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -25166,7 +25173,7 @@ class Parse_type_commentNode(Node):
 
     title = 'Parse_type_commentNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -25240,10 +25247,10 @@ class Pca_lowrankNode(Node):
 
     title = 'Pca_lowrankNode'
     init_inputs = [
-        NodeInputBP('A'),
-NodeInputBP('q'),
-NodeInputBP('center'),
-NodeInputBP('niter'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'A'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'q'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'center'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'niter'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -25558,7 +25565,7 @@ class PlatformNode(Node):
 
     title = 'PlatformNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -25889,7 +25896,7 @@ class Prepare_multiprocessing_environmentNode(Node):
 
     title = 'Prepare_multiprocessing_environmentNode'
     init_inputs = [
-        NodeInputBP('path'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'path'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -26566,8 +26573,8 @@ Automatically bound operator 'aten::quantized_gru' with schema(s):
 
     title = 'Quantized_gruNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -26617,8 +26624,8 @@ Automatically bound operator 'aten::quantized_lstm' with schema(s):
 
     title = 'Quantized_lstmNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28275,11 +28282,11 @@ class SaveNode(Node):
 
     title = 'SaveNode'
     init_inputs = [
-        NodeInputBP('obj'),
-NodeInputBP('f'),
-NodeInputBP('pickle_module'),
-NodeInputBP('pickle_protocol'),
-NodeInputBP('_use_new_zipfile_serialization'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'obj'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'f'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'pickle_module'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'pickle_protocol'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = '_use_new_zipfile_serialization'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28656,7 +28663,7 @@ class Set_default_dtypeNode(Node):
 
     title = 'Set_default_dtypeNode'
     init_inputs = [
-        NodeInputBP('d'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'd'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28689,7 +28696,7 @@ class Set_default_tensor_typeNode(Node):
 
     title = 'Set_default_tensor_typeNode'
     init_inputs = [
-        NodeInputBP('t'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 't'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28707,7 +28714,7 @@ class Set_deterministicNode(Node):
 
     title = 'Set_deterministicNode'
     init_inputs = [
-        NodeInputBP('d'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'd'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28802,8 +28809,8 @@ class Set_grad_enabledNode(Node):
 
     title = 'Set_grad_enabledNode'
     init_inputs = [
-        NodeInputBP('self'),
-NodeInputBP('mode'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'self'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'mode'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28896,12 +28903,12 @@ class Set_printoptionsNode(Node):
 
     title = 'Set_printoptionsNode'
     init_inputs = [
-        NodeInputBP('precision'),
-NodeInputBP('threshold'),
-NodeInputBP('edgeitems'),
-NodeInputBP('linewidth'),
-NodeInputBP('profile'),
-NodeInputBP('sci_mode'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'precision'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'threshold'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'edgeitems'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'linewidth'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'profile'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'sci_mode'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28921,7 +28928,7 @@ class Set_rng_stateNode(Node):
 
     title = 'Set_rng_stateNode'
     init_inputs = [
-        NodeInputBP('new_state'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'new_state'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28943,9 +28950,9 @@ class Set_vitalNode(Node):
 
     title = 'Set_vitalNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
-NodeInputBP('c'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'c'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -28969,7 +28976,7 @@ class Set_warn_alwaysNode(Node):
 
     title = 'Set_warn_alwaysNode'
     init_inputs = [
-        NodeInputBP('b'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -29849,9 +29856,9 @@ class SplitNode(Node):
 
     title = 'SplitNode'
     init_inputs = [
-        NodeInputBP('tensor'),
-NodeInputBP('split_size_or_sections'),
-NodeInputBP('dim'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'tensor'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'split_size_or_sections'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'dim'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -30390,16 +30397,16 @@ class StftNode(Node):
 
     title = 'StftNode'
     init_inputs = [
-        NodeInputBP('input'),
-NodeInputBP('n_fft'),
-NodeInputBP('hop_length'),
-NodeInputBP('win_length'),
-NodeInputBP('window'),
-NodeInputBP('center'),
-NodeInputBP('pad_mode'),
-NodeInputBP('normalized'),
-NodeInputBP('onesided'),
-NodeInputBP('return_complex'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'input'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'n_fft'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'hop_length'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'win_length'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'window'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'center'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'pad_mode'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'normalized'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'onesided'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'return_complex'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -30795,10 +30802,10 @@ class Svd_lowrankNode(Node):
 
     title = 'Svd_lowrankNode'
     init_inputs = [
-        NodeInputBP('A'),
-NodeInputBP('q'),
-NodeInputBP('niter'),
-NodeInputBP('M'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'A'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'q'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'niter'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'M'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -31099,7 +31106,7 @@ settrace() -- set the global debug tracing function
 
     title = 'SysNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -31590,10 +31597,10 @@ class TensordotNode(Node):
 
     title = 'TensordotNode'
     init_inputs = [
-        NodeInputBP('a'),
-NodeInputBP('b'),
-NodeInputBP('dims'),
-NodeInputBP('out'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'dims'),
+NodeInputBP(dtype=dtypes.Data(default=1), label = 'out'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -31636,7 +31643,7 @@ class TextwrapNode(Node):
 
     title = 'TextwrapNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -32471,7 +32478,7 @@ class TypenameNode(Node):
 
     title = 'TypenameNode'
     init_inputs = [
-        NodeInputBP('o'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'o'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -32573,7 +32580,7 @@ class Unify_type_listNode(Node):
 
     title = 'Unify_type_listNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -32969,7 +32976,7 @@ class Use_deterministic_algorithmsNode(Node):
 
     title = 'Use_deterministic_algorithmsNode'
     init_inputs = [
-        NodeInputBP('mode'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'mode'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -33484,7 +33491,7 @@ class WaitNode(Node):
 
     title = 'WaitNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -33505,7 +33512,7 @@ class WarningsNode(Node):
 
     title = 'WarningsNode'
     init_inputs = [
-        NodeInputBP('a'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
     ]
     init_outputs = [
         NodeOutputBP(),
@@ -33702,7 +33709,8 @@ class Zero_Node(Node):
 """
 WARNING: Module ZerosNode was generated using fallback option. May contain bugs
 """
-
+'''
+#KEEP
 class ZerosNode(Node):
     """
 zeros(*size, *, out=None, dtype=None, layout=torch.strided, device=None, requires_grad=False) -> Tensor
@@ -33748,7 +33756,7 @@ Example::
 
     def update_event(self, inp=-1):
         self.set_output_val(0, torch.zeros())
-
+'''
 
 
 """
@@ -33802,7 +33810,8 @@ Example::
 
     def update_event(self, inp=-1):
         self.set_output_val(0, torch.zeros_like())
-
+'''
+'''
 torch_nodes = [
     AvgNode, 
     AggregationtypeNode, 
@@ -34840,6 +34849,14 @@ torch_nodes = [
     Zero_Node, 
     ZerosNode, 
     Zeros_likeNode	
+]
+'''
+torch_nodes = [
+    ZerosNode,
+    OnesNode,
+    From_numpyNode,
+    TensorNode,
+    As_tensorNode
 ]
 export_nodes(*torch_nodes)
     
