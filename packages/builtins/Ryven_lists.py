@@ -19,30 +19,6 @@ class AppendListNode(Node):
 		result = self.input(0)
 		result.append(self.input(1))
 		self.set_output_val(0,result)
-class ListClearNode(Node):
-	'''
-	Clears all elements from a list, eg:
-	[0,4,6,1,5,...] --> []
-	'''
-	title = 'clear'
-	tags = ['list']
-	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1), label = 'list')]
-	init_outputs = [NodeOutputBP()]
-	color ='#HEXCOL'
-	def update_event(self, inp=-1):
-		result = self.input(0)
-		result.clear()
-		self.set_output_val(0,result)
-class ListCopyNode(Node):
-	'''Return a copy of list. The new list can be edited without affecting old list'''
-	title = 'copy'
-	tags = ['list']
-	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1),label = 'list')]
-	init_outputs = [NodeOutputBP(label="new list")]
-	color ='#HEXCOL'
-	def update_event(self, inp=-1):
-		result = self.input(0).copy()
-		self.set_output_val(0,result)
 class ListExtendNode(Node):
 	'''Extend list by appending elements from the iterable.'''
 	title = 'extend'
@@ -154,11 +130,11 @@ class ListSortNode(Node):
 	>>>[1,2,5,5,7,8]
 	'''
 	title = 'title'
-	tags = ['str']
+	tags = ['list']
 	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1))]
 	init_outputs = [NodeOutputBP()]
 	color ='#HEXCOL'
 	def update_event(self, inp=-1):
 		input = self.input
 		result = input
-		self.set_output_val(index,result)
+		self.set_output_val(0,result)
