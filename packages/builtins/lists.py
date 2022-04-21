@@ -1,13 +1,12 @@
 from ryven.NENV import *
-#append,clear,copy, count, extend, index, insert, mro, pop, remove, reverse,sort
-#list > some shade of yelllow
+#list > some shade of yellow
 class AppendListNode(Node):
 	'''
 	Appends object to list.
 	For example, if list = [0,0] and object = 5:
 	list is now [0,0,5]
 	'''
-	title = 'Append'
+	title = 'append'
 	tags = ['list']
 	init_inputs = [
 		NodeInputBP(dtype=dtypes.Data(default=1), label = 'list'),
@@ -20,7 +19,7 @@ class AppendListNode(Node):
 		result = self.input(0)
 		result.append(self.input(1))
 		self.set_output_val(0,result)
-class ClearListode(Node):
+class ListClearNode(Node):
 	'''
 	Clears all elements from a list, eg:
 	[0,4,6,1,5,...] --> []
@@ -127,4 +126,39 @@ class ListRemoveNode(Node):
 	def update_event(self, inp=-1):
 		result = self.input(0).remove(self.input(1))
 		self.set_output_val(0,result)
+class ListReverseNode(Node):
+	'''
+	Reverses order of elements in list
 
+	Example:
+	list = [0,1,2,3,4]
+	list.reverse()
+	list
+	>>>[4,3,2,1,0]
+	'''
+	title = 'reverse'
+	tags = ['list']
+	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1))]
+	init_outputs = [NodeOutputBP()]
+	color ='#HEXCOL'
+	def update_event(self, inp=-1):
+		result = self.input(0).reverse()
+		self.set_output_val(0,result)
+class ListSortNode(Node):
+	'''
+	Sorts list and returns it
+	Example:
+	list = [5,8,1,2,7,5,7]
+	list.sort()
+	list
+	>>>[1,2,5,5,7,8]
+	'''
+	title = 'title'
+	tags = ['str']
+	init_inputs = [NodeInputBP(dtype=dtypes.Data(default=1))]
+	init_outputs = [NodeOutputBP()]
+	color ='#HEXCOL'
+	def update_event(self, inp=-1):
+		input = self.input
+		result = input
+		self.set_output_val(index,result)
