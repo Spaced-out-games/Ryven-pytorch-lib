@@ -179,11 +179,6 @@ class DegreesNode(Node):
 
     def update_event(self, inp=-1):
         self.set_output_val(0, degrees(self.input(0)))
-
-"""
-WARNING: Module ENode was generated using fallback option. May contain bugs
-"""
-
 class ENode(Node):
     """Convert a string or number to a floating point number, if possible."""
 
@@ -414,6 +409,8 @@ NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
 
     def update_event(self, inp=-1):
         self.set_output_val(0, inf(self.input(0), self.input(1)))
+
+#rel_tol abs_tol
 class IscloseNode(Node):
     """Determine whether two floating point numbers are close in value.
 
@@ -436,7 +433,8 @@ only close to themselves."""
     title = 'IscloseNode'
     init_inputs = [
         NodeInputBP(dtype=dtypes.Data(default=1), label = 'a'),
-NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = 'b'),
+        NodeInputBP(dtype=dtypes.Data(default=1), label = '')
     ]
     init_outputs = [
         NodeOutputBP(),
